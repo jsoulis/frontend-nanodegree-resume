@@ -29,12 +29,11 @@ var name = "Taylor Soulis"
 	"name": "Taylor Soulis",
 	"role": "CSE Graduate Student",
 	"welcomeMessage": "Hello Greeting",
-	"biopic": "images\\fry.jpg",
+	"biopic": "images\\me.jpg",
 	"contacts": {
 		"mobile": "010-3182-7385",
 		"email": "jtsoulis7@gmail.com",
 		"github": "jsoulis",
-		"twitter": "@brazos2010",
 		"location": "Seoul, South Korea"
 	},
 	"skills": ["CSS", "HTML5", "JavaScript", "C", "Java", "Python", "Korean Language"]
@@ -94,7 +93,6 @@ $("#header").prepend(formattedName);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedTwitter =HTMLtwitter.replace("%data%", bio.contacts.twitter)
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
@@ -105,12 +103,11 @@ $("#topContacts").append(formattedMobile);
 $("#topContacts").append(formattedEmail);
 $("#topContacts").append(formattedGithub);
 $("#topContacts").append(formattedLocation);
-$("#topContacts").append(formattedTwitter);
 
 
 
-$(".biopic").append(formattedBioPic);
-$(".welcome-message:last").append(formattedMessage);
+$("#header").append(formattedBioPic);
+$("#header").append(formattedMessage);
 
 if(bio.skills.length > 0)
 {
