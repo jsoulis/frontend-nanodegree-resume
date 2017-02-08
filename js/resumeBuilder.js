@@ -16,11 +16,11 @@ var name = "Taylor Soulis"
  var projects = {
    "projects": [
      {
-       "title": "",
-       "dates": "",
-       "description": "",
+       "title": "Kimi no na wa",
+       "dates": "2016",
+       "description": "A fun new movie",
        "images": [
-         "Url to image", "another URL"
+         "https://i.redditmedia.com/0ribEcoh7Jr0AMq9GuUg7ZNFvDARr_ltk2O25GFd_Go.jpg?w=320&s=5d8c72445606b2c115a115dd6947650d"
        ]
      }
    ]
@@ -29,12 +29,12 @@ var name = "Taylor Soulis"
 	"name": "Taylor Soulis",
 	"role": "CSE Graduate Student",
 	"welcomeMessage": "Hello Greeting",
-	"biopic": "C:\\Users\\Admin\\Udacity\\FrontEndWeb\\frontend-nanodegree-resume\\images\\taylor.jpg",
+	"biopic": "images\\fry.jpg",
 	"contacts": {
 		"mobile": "010-3182-7385",
 		"email": "jtsoulis7@gmail.com",
 		"github": "jsoulis",
-		"twitter": "",
+		"twitter": "@brazos2010",
 		"location": "Seoul, South Korea"
 	},
 	"skills": ["CSS", "HTML5", "JavaScript", "C", "Java", "Python", "Korean Language"]
@@ -94,15 +94,34 @@ $("#header").prepend(formattedName);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedTwitter =HTMLtwitter.replace("%data%", bio.contacts.twitter)
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-//var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+
 
 $("#topContacts").append(formattedMobile);
 $("#topContacts").append(formattedEmail);
 $("#topContacts").append(formattedGithub);
 $("#topContacts").append(formattedLocation);
-//$("#topContacts").append(formattedBioPic);
+$("#topContacts").append(formattedTwitter);
+
+
+
+$(".biopic").append(formattedBioPic);
+$(".welcome-message:last").append(formattedMessage);
+
+if(bio.skills.length > 0)
+{
+  $("#header").append(HTMLskillsStart);
+  var formattedSkills = [];
+  for(var i = 0; i<bio.skills.length; i++)
+  {
+    formattedSkills[i] = HTMLskills.replace("%data%", bio.skills[i]);
+    $("#skills").append(formattedSkills[i]);
+  }
+}
 
 for(job in work.jobs)
 {
@@ -113,4 +132,55 @@ for(job in work.jobs)
   var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
   $(".work-entry:last").append(formattedEmployerTitle);
+
+  var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  $(".work-entry:last").append(formattedDates);
+
+  var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+  $(".work-entry:last").append(formattedDescription);
 }
+
+$(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+})
+
+function logClicks(x,y)
+{
+  console.log(x+", "+y);
+}
+
+$("#main").append(internationalizeButton);
+function inName(name)
+{
+  var names = name.split(" ");
+  var internationalName = names[0] + " " + names[1].toUpperCase();
+  return internationalName;
+}
+
+projects.display = function() {
+  for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedTitle);
+
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedDescription);
+
+    if(projects.projects[project].images.length>0) {
+      for (image in projects.projects[project].images) {
+        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedImage);
+      }
+    }
+  }
+}
+
+projects.display();
+$("#mapDiv").append(googleMap);
