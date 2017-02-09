@@ -12,7 +12,7 @@ var bio = {
     },
     "welcomeMessage": "Hello, please feel free to contact me.",
     "skills": ["Real Time Systems", "Korean Language", "Troubleshooting"],
-    "biopic": "images\\me.jpg",
+    "biopic": "images\\me.jpg"
 }
 
 var education = {
@@ -28,7 +28,7 @@ var education = {
             "name": "Seoul National University",
             "location": "Seoul, South Korea",
             "degree": "Master's of Science",
-            "dates": "Sep. 2016 - Present",
+            "dates": "Sep. 2016 - Present ",
             "url": "http://en.snu.ac.kr/",
             "majors": ["Computer Science Engineering"]
         }
@@ -108,6 +108,7 @@ bio.display = function() {
     $("#topContacts").append(formattedLocation);
 
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+    formattedBioPic = formattedBioPic.replace("#", "My profile picture")
     $("#header").append(formattedBioPic);
 
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -121,6 +122,7 @@ bio.display = function() {
             $("#skills").append(formattedSkills[i]);
         }
     }
+
 }
 work.display = function() {
     for (job in work.jobs) {
