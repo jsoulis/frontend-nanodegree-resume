@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #64daff;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #4a4a4a;
   line-height: 29px;
   padding: 10px;
 }
@@ -65,7 +65,7 @@ h5 {
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #4a4a4a;
   line-height: 16px;
   float: left;
 }
@@ -73,7 +73,7 @@ h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999;
+  color: #4a4a4a;
   line-height: 16px;
   float: right;
 
@@ -100,16 +100,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #64daff;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.blue {
+  background-color: #64daff;
 }
 
-.orange-text {
-  color: #f5ae23;
+.blue-text {
+  color: #64daff;
 }
 
 .white-text {
