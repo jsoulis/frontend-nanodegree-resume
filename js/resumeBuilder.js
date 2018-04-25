@@ -71,8 +71,8 @@ var work = {
         "employer": "Real-Time Ubiqutous Systems Laboratory",
         "dates": "Sep. 2016 - Present",
         "location": "Seoul, South Korea",
-        "description": "",
-        "url": "http://www.osisoft.com/"
+        "description": "Researching multi-core fluid scheduling and methods to minimize the peak density experienced by real-time task sets described by a generic DAG model. Currently implementing extension to our schedulablity test for real-time tasks run in multi-core environment. Extending test that works for task set described by a sequential DAG to also work for general DAG. Implementation is done in java. Prepared and administered course content for an embedded systems intro lecture series. We taught fundamentals of embedded systems programming, bare-metal programming, interrupt mechanism, OS, drivers, etc. Final project was to implement maze solving algorithm for robot car that we provided students. Helped design and implement user interface features for the GUI of our ECU real-time task simulator. Took advanced courses in computer architecture, distributed systems, real-time systems and databases.",
+        "url": "https://rubis.snu.ac.kr/home"
     },{
         "title": "Tech Support Engineer",
         "employer": "OSIsoft",
@@ -87,6 +87,14 @@ var work = {
 
 var projects = {
     "projects": [{
+        "title": "Multi-core Scheduling of Real-Time Tasks Modeled by Generic DAGs with Multiple Parallelization Options",
+        "dates": "Jan 2018 - Present",
+        "description": "Researching method to schedule set of real-time tasks in which each individual task can have computational units that are run in parallel. In other words, each task can be modeled as a generic direct acyclic graph (DAG). Our general approach is to minimize the peak task set density. The density is dependent on internal deadlines for each computational unit as well as by the parallelization option chosen for the unit (for example, whether 2 or 4 threads will be used for the unit in a 4 core system).",
+        "images": [
+            "images\\dag.png"
+        ],
+        "url": ""
+    }, {
         "title": "My Reads",
         "dates": "Feb 2018 - Mar 2018",
         "description": "The version provided here is my take on implementing an interactive bookshelf using React. Books can be changed from CurrentlyReading, Read, and WantToRead sections. The frontend is connected to a server provided by Udacity that has a collection of books. The server accepts a given amount of search terms that users can use to return books to add to their bookshelf component.",
