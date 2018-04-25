@@ -11,7 +11,7 @@ var bio = {
         "location": "Seoul, South Korea"
     },
     "welcomeMessage": "Hello, please feel free to contact me.",
-    "skills": ["Real Time Systems", "Korean Language", "Troubleshooting"],
+    "skills": ["C++", "Real Time Systems", "Korean Language", "Troubleshooting"],
     "biopic": "images\\me.jpg"
 };
 
@@ -34,9 +34,14 @@ var education = {
         }
     ],
     "onlineCourses": [{
+            "title": "React Nanodegree Program",
+            "school": "Udacity",
+            "dates": "Feb. 2018 - Present",
+            "url": "http://udacity.com/"
+        },{
             "title": "Front-End Web Developer Nanodegree Program",
             "school": "Udacity",
-            "dates": "Jan. 2017 - Present",
+            "dates": "Jan. 2017 - Mar. 2017",
             "url": "http://udacity.com/"
         },
         {
@@ -62,24 +67,41 @@ var education = {
 
 var work = {
     "jobs": [{
+        "title": "Research Assistant",
+        "employer": "Real-Time Ubiqutous Systems Laboratory",
+        "dates": "Sep. 2016 - Present",
+        "location": "Seoul, South Korea",
+        "description": "",
+        "url": "http://www.osisoft.com/"
+    },{
         "title": "Tech Support Engineer",
         "employer": "OSIsoft",
         "dates": "Sep. 2014 - Jun. 2016",
         "location": "San Leandro, CA",
-        "description": "Worked with customers to resolve troubleshooting related isues with PI System Software",
+        "description": "Troubleshoot and resolve connection, configuration, and data corruption issues via remote session or email communication that customers might face when using PI Software products. Assist customers onsite or remotely with PI Server architecture implementation and design. Train customers onsite and help them solve organization specific business problems with PI Software products. Assist customers in developing simple applications that employ our proprietary AF SDK, PI SDK,PI Web API and other development technologies.",
         "url": "http://www.osisoft.com/"
     }]
+
+
 };
 
 var projects = {
     "projects": [{
-        "title": "CO2 Photoreduction Systems",
-        "dates": "Sep 2012 - Jul 2014",
-        "description": "A literary review of CO2 photoreduction systems. The photocatalytic reduction of CO2 into hydrocarbon fuels is a promising way to recycle CO2 as a fuel feedstock by taking advantage of readily available solar energy.",
+        "title": "My Reads",
+        "dates": "Feb 2018 - Mar 2018",
+        "description": "The version provided here is my take on implementing an interactive bookshelf using React. Books can be changed from CurrentlyReading, Read, and WantToRead sections. The frontend is connected to a server provided by Udacity that has a collection of books. The server accepts a given amount of search terms that users can use to return books to add to their bookshelf component.",
         "images": [
-            "images\\paper.png", "images\\system.png"
+            "images\\myreads.png"
         ],
-        "url": "http://aaqr.org/VOL14_No2_March2014/8_AAQR-13-09-OA-0283_533-549.pdf"
+        "url": "https://github.com/jsoulis/reactnd-project-myreads-starter"
+    }, {
+      "title": "CO2 Photoreduction Systems",
+      "dates": "Sep 2012 - Jul 2014",
+      "description": "A literary review of CO2 photoreduction systems. The photocatalytic reduction of CO2 into hydrocarbon fuels is a promising way to recycle CO2 as a fuel feedstock by taking advantage of readily available solar energy.",
+      "images": [
+          "images\\paper.png", "images\\system.png"
+      ],
+      "url": "http://aaqr.org/VOL14_No2_March2014/8_AAQR-13-09-OA-0283_533-549.pdf"
     }]
 };
 
@@ -247,7 +269,7 @@ placesLived.display();
 
 /*Extra Stuff*/
 
-$("#main").append(internationalizeButton);
+//$("#main").append(internationalizeButton);
 
 function inName(name) {
     var names = name.split(" ");

@@ -112,6 +112,11 @@ a {
   color: #64daff;
 }
 
+.img-care {
+  overflow: hidden;
+  width: 100%;
+}
+
 .white-text {
   font-weight: bold;
   color: #fff;
